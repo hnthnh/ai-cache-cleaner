@@ -108,15 +108,17 @@ impl dialoguer::theme::Theme for CleanerTheme {
         checked: bool,
         active: bool,
     ) -> std::fmt::Result {
-        let marker = if checked {
-            "[x] -- "
-        } else {
-            "[ ] -- "
-        };
+        let marker = if checked { "[x] -- " } else { "[ ] -- " };
 
         if active {
             // Highlight the active cursor line and checkbox indicator, but preserve original text colors
-            write!(f, " {} {}{}", ">".yellow().bold(), marker.yellow().bold(), text)
+            write!(
+                f,
+                " {} {}{}",
+                ">".yellow().bold(),
+                marker.yellow().bold(),
+                text
+            )
         } else {
             // Render inactive items clearly without dimming the main text
             write!(f, "   {}{}", marker, text)
