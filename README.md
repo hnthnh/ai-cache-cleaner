@@ -15,43 +15,51 @@
   * `pip` (Pip package download cache)
   * `cursor` (Cursor prompt logs and workspace history)
 * **Custom Scans**: Scan and clean any custom project path.
-* **Dry Run Mode**: Preview deletions safely using the `--dry-run` or `-n` flag before removing files.
 * **Insanely Fast**: Written in Rust, using `walkdir` to traverse files in parallel without runtime garbage collection pauses.
 
 ---
 
-## 🚀 Installation & Local Run
+## 🚀 Installation & Setup
 
-### Prerequisites
-Make sure you have Rust installed on your Mac or Linux system. If not, install it using:
+Since this is a Rust-based tool, you can install it easily by compiling it locally, which ensures macOS Gatekeeper security validation is completely skipped.
+
+### 1. Install Rust (Prerequisite)
+
+If you don't have Rust/Cargo installed on your system yet, run one of the following commands:
+
+* **macOS (using Homebrew):**
+  ```bash
+  brew install rust
+  ```
+* **macOS & Linux (using official shell installer):**
+  ```bash
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  ```
+  *(Restart your terminal after installation to apply changes)*
+
+---
+
+### 2. Install AI Cache Cleaner
+
+You can install it directly from GitHub or compile it locally from source.
+
+#### Option A: Quick One-Liner Install (Recommended)
+Compile and install the executable globally from the remote Git repository:
 ```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install --git https://github.com/hnthnh/ai-cache-cleaner.git
 ```
 
-### Build & Run from Source
+#### Option B: Install from Local Clone
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ai-cache-cleaner.git
+git clone https://github.com/hnthnh/ai-cache-cleaner.git
 cd ai-cache-cleaner
 
-# Build and run the project
-cargo run -- scan
-
-# Build production binary
-cargo build --release
-
-# The compiled binary will be available at:
-# ./target/release/ai-cache-cleaner
-```
-
-### Install Globally
-```bash
+# Compile and install globally on your system
 cargo install --path .
-
-# Now run globally
-ai-cache-cleaner scan
-ai-cache-cleaner clean hf
 ```
+
+Once installed, the `ai-cache-cleaner` command will be available globally in your path.
 
 ---
 
@@ -99,4 +107,5 @@ ai-cache-cleaner/
 
 ## 📄 LICENSE
 Distributed under the **MIT License**. Feel free to edit, share, and commercialize.
+
 
