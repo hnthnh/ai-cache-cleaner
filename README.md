@@ -3,6 +3,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Rust Version](https://img.shields.io/badge/rust-1.56%2B-orange.svg)](https://www.rust-lang.org/)
 
+![AI Cache Cleaner](thumbnail.png)
+
 **AI Cache Cleaner** is a blazing-fast command-line tool (CLI) written in Rust to scan and clean cache directories, heavy model weights, and logs created by popular AI libraries and editors (Hugging Face, Ollama, PyTorch, Pip, Cursor, etc.).
 
 ---
